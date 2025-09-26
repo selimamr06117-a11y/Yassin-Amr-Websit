@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hobbies — Yassin Amr</title>
+<style>
+  :root{--bg:#faf7f5;--card:#fff;--muted:#666;--accent:#f9c846;--text:#222;--shadow:0 6px 18px rgba(20,20,20,0.06)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family: 'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--text)}
+  header{background:#fff;padding:16px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+  main{max-width:980px;margin:36px auto;padding:0 18px;text-align:center}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin:14px auto;max-width:740px;text-align:left}
+  h1{margin:6px 0 18px}
+  .back{display:inline-block;margin-top:18px;padding:8px 14px;background:#f1f1f1;border-radius:8px;text-decoration:none;color:#111}
+  .lang-btn{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer}
+  footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div style="font-weight:700">Yassin Amr</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div id="en">
+    <h1>My Hobbies & Interests</h1>
+    <div class="card"><h3>Favorite Sport</h3><p>Football</p></div>
+    <div class="card"><h3>Sport I Love Most</h3><p>Swimming</p></div>
+    <div class="card"><h3>Favorite Club</h3><p>Real Madrid</p></div>
+    <div class="card"><h3>Favorite Player</h3><p>Cristiano Ronaldo</p></div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ Back</a>
+  </div>
+
+  <div id="ar" style="display:none;direction:rtl;">
+    <h1>هواياتي واهتماماتي</h1>
+    <div class="card"><h3>الرياضة المفضلة</h3><p>كرة القدم</p></div>
+    <div class="card"><h3>الرياضة التي أحبها أكثر</h3><p>السباحة</p></div>
+    <div class="card"><h3>النادي المفضل</h3><p>ريال مدريد</p></div>
+    <div class="card"><h3>اللاعب المفضل</h3><p>كريستيانو رونالدو</p></div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ العودة</a>
+  </div>
+</main>
+
+<footer>© 2024 Yassin Amr. All Rights Reserved.</footer>
+
+<button class="lang-btn" id="langToggle">🌐 عربي</button>
+
+<script>
+  // language toggle (persist)
+  const en = document.getElementById('en'), ar = document.getElementById('ar'), btn = document.getElementById('langToggle');
+  function setLang(l){ if(l==='ar'){ en.style.display='none'; ar.style.display='block'; btn.textContent='🌐 English'; localStorage.setItem('siteLang','ar'); } else { en.style.display='block'; ar.style.display='none'; btn.textContent='🌐 عربي'; localStorage.setItem('siteLang','en'); } }
+  btn.addEventListener('click', ()=> setLang(localStorage.getItem('siteLang')==='en' ? 'ar' : 'en'));
+  document.addEventListener('DOMContentLoaded', ()=> setLang(localStorage.getItem('siteLang') || 'en'));
+
+  // back button
+  function goBack(e){
+    e.preventDefault();
+    if(history.length>1) history.back();
+    else location.href='index.html';
+  }
+</script>
+</body>
+</html>

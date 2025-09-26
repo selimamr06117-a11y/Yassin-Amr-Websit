@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Yassin Amr</title>
+<style>
+  :root{--bg:#faf7f5;--card:#fff;--muted:#666;--accent:#f9c846;--text:#222;--shadow:0 6px 18px rgba(20,20,20,0.06)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--text)}
+  header{background:#fff;padding:16px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+  main{max-width:980px;margin:36px auto;padding:0 18px;text-align:center}
+  h1{margin:6px 0 18px}
+  .contact-container{display:flex;flex-direction:column;gap:12px;align-items:center}
+  .btn{padding:12px 18px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+  .wh{background:#25d366;color:#fff}
+  .mail{background:#4285F4;color:#fff}
+  .back{display:inline-block;margin-top:14px;padding:8px 12px;background:#f1f1f1;border-radius:8px;text-decoration:none;color:#111}
+  .lang-btn{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer}
+  footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div style="font-weight:700">Yassin Amr</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div id="en">
+    <h1>Contact Me</h1>
+    <p>Phone: <strong>01030814805</strong></p>
+    <p>Email: <strong>selimamr.06117@gmail.com</strong></p>
+
+    <div class="contact-container">
+      <a class="btn wh" href="https://wa.me/201030814805" target="_blank">Contact via WhatsApp</a>
+      <a class="btn mail" href="mailto:selimamr.06117@gmail.com">Send Email</a>
+    </div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ Back</a>
+  </div>
+
+  <div id="ar" style="display:none;direction:rtl;">
+    <h1>تواصل معي</h1>
+    <p>الهاتف: <strong>01030814805</strong></p>
+    <p>البريد: <strong>selimamr.06117@gmail.com</strong></p>
+
+    <div class="contact-container">
+      <a class="btn wh" href="https://wa.me/201030814805" target="_blank">تواصل عبر واتساب</a>
+      <a class="btn mail" href="mailto:selimamr.06117@gmail.com">إرسال إيميل</a>
+    </div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ رجوع</a>
+  </div>
+</main>
+
+<footer>© 2024 Yassin Amr. All Rights Reserved.</footer>
+
+<button class="lang-btn" id="langToggle">🌐 عربي</button>
+
+<script>
+  const en = document.getElementById('en'), ar = document.getElementById('ar'), btn = document.getElementById('langToggle');
+  function setLang(l){ if(l==='ar'){ en.style.display='none'; ar.style.display='block'; btn.textContent='🌐 English'; localStorage.setItem('siteLang','ar'); } else { en.style.display='block'; ar.style.display='none'; btn.textContent='🌐 عربي'; localStorage.setItem('siteLang','en'); } }
+  btn.addEventListener('click', ()=> setLang(localStorage.getItem('siteLang')==='en' ? 'ar' : 'en'));
+  document.addEventListener('DOMContentLoaded', ()=> setLang(localStorage.getItem('siteLang') || 'en'));
+
+  function goBack(e){ e.preventDefault(); if(history.length>1) history.back(); else location.href='index.html'; }
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Yassin Amr</title>
+<style>
+  :root{
+    --bg:#faf7f5;
+    --card:#fff;
+    --muted:#666;
+    --accent:#f9c846;
+    --text:#222;
+    --shadow: 0 6px 18px rgba(20,20,20,0.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--bg);color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    background:#fff; padding:18px 48px; display:flex; align-items:center; justify-content:space-between;
+    box-shadow:0 1px 0 rgba(0,0,0,0.04);
+    position:sticky; top:0; z-index:10;
+  }
+  header .brand{display:flex; align-items:center; gap:12px; font-weight:700;}
+  header nav a{margin-left:18px; color:var(--muted); text-decoration:none; font-weight:600;}
+  header nav a.contact{background:var(--accent); color:#000; padding:8px 14px; border-radius:999px;}
+  main{max-width:980px; margin:40px auto; padding:0 20px; text-align:center;}
+  .avatar{
+    width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto;
+    border:6px solid #fff; box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+  h1{font-size:32px;margin:18px 0 6px;}
+  .subtitle{color:var(--muted); margin-bottom:26px;}
+  .about{max-width:760px;margin:18px auto;color:var(--muted);line-height:1.6;}
+  .section-title{margin-top:40px;font-weight:700;}
+  .hobbies-grid{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:18px;}
+  .hobby{background:var(--card);min-width:160px;padding:22px;border-radius:12px;box-shadow:var(--shadow);text-align:center;}
+  .hobby .icon{font-size:22px;margin-bottom:10px;}
+  .favorites{margin-top:26px;max-width:700px;margin-left:auto;margin-right:auto;}
+  .fav-item{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  footer{margin-top:60px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center;}
+  /* language toggle button fixed bottom-right */
+  .lang-btn{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;z-index:50;}
+  /* small responsive */
+  @media (max-width:640px){
+    header{padding:12px}
+    .hobby{min-width:140px;padding:18px}
+    .avatar{width:110px;height:110px}
+  }
+</style>
+</head>
+<body>
+  <!-- English and Arabic content blocks -->
+  <header>
+    <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;">YA</div><div>Yassin Amr</div></div>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="contact.html" class="contact">Contact Me</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ENGLISH -->
+    <div id="en">
+      <div class="avatar"><img src="https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/275122244_286883126889558_6364708967349433175_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Dg_8NcTP3SoQ7kNvwFcgVkC&_nc_oc=Admwd9hX1wno0kIWA9b73aNbTtgNwefy7fnxCIB1mlpRORO-78lVY2I--Yg0aHpfUDY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=981b_WidaJpoynAX9WtCNw&oh=00_AfYttHfDrGjEHsqsB67LtiXUMdCA9xm2uwTTcClN_92y9A&oe=68DB8C0A" alt="Yassin"></div>
+      <h1>Hi, I'm <strong>Yassin Amr</strong></h1>
+      <div class="subtitle">High School Student & Aspiring Artist</div>
+      <p class="about">I'm Yassin — a high school student passionate about art, music and gaming. I enjoy drawing, playing the guitar and exploring new games. In my free time I also love swimming and spending time with friends.</p>
+
+      <h3 class="section-title">My Hobbies</h3>
+      <div class="hobbies-grid">
+        <div class="hobby"><div class="icon">🎨</div><div>Drawing</div></div>
+        <div class="hobby"><div class="icon">🎸</div><div>Guitar</div></div>
+        <div class="hobby"><div class="icon">🎮</div><div>Gaming</div></div>
+        <div class="hobby"><div class="icon">🏊‍♂</div><div>Swimming</div></div>
+      </div>
+
+      <h3 class="section-title">My Favorites</h3>
+      <div class="favorites">
+        <div class="fav-item">🎨 <strong>Color:</strong>&nbsp;<span style="color:var(--muted)">Electric Blue</span></div>
+        <div class="fav-item">🎵 <strong>Band:</strong>&nbsp;<span style="color:var(--muted)">The Indie Rockers</span></div>
+        <div class="fav-item">🎮 <strong>Game:</strong>&nbsp;<span style="color:var(--muted)">Galaxy Explorers</span></div>
+        <div class="fav-item">🍕 <strong>Food:</strong>&nbsp;<span style="color:var(--muted)">Pizza</span></div>
+      </div>
+    </div>
+
+    <!-- ARABIC (hidden by default) -->
+    <div id="ar" style="display:none; direction:rtl;">
+      <div class="avatar"><img src="https://scontent.fcai19-7.fna.fbcdn.net/v/t39.30808-6/275122244_286883126889558_6364708967349433175_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Dg_8NcTP3SoQ7kNvwFcgVkC&_nc_oc=Admwd9hX1wno0kIWA9b73aNbTtgNwefy7fnxCIB1mlpRORO-78lVY2I--Yg0aHpfUDY&_nc_zt=23&_nc_ht=scontent.fcai19-7.fna&_nc_gid=981b_WidaJpoynAX9WtCNw&oh=00_AfYttHfDrGjEHsqsB67LtiXUMdCA9xm2uwTTcClN_92y9A&oe=68DB8C0A" alt="ياسين"></div>
+      <h1>مرحبًا، أنا <strong>ياسين عمرو</strong></h1>
+      <div class="subtitle">طالب ثانوي وطموح في الفن</div>
+      <p class="about">أنا ياسين — طالب ثانوي شغوف بالرسم والموسيقى والألعاب. أحب الرسم، العزف على الجيتار واستكشاف ألعاب جديدة. في وقت الفراغ أحب السباحة وقضاء الوقت مع الأصدقاء.</p>
+
+      <h3 class="section-title">هواياتي</h3>
+      <div class="hobbies-grid">
+        <div class="hobby"><div class="icon">🎨</div><div>الرسم</div></div>
+        <div class="hobby"><div class="icon">🎸</div><div>الجيتار</div></div>
+        <div class="hobby"><div class="icon">🎮</div><div>الألعاب</div></div>
+        <div class="hobby"><div class="icon">🏊‍♂</div><div>السباحة</div></div>
+      </div>
+
+      <h3 class="section-title">تفضيلاتي</h3>
+      <div class="favorites">
+        <div class="fav-item">🎨 <strong>اللون:</strong>&nbsp;<span style="color:var(--muted)">الأزرق الكهربائي</span></div>
+        <div class="fav-item">🎵 <strong>الفرقة:</strong>&nbsp;<span style="color:var(--muted)">The Indie Rockers</span></div>
+        <div class="fav-item">🎮 <strong>اللعبة:</strong>&nbsp;<span style="color:var(--muted)">Galaxy Explorers</span></div>
+        <div class="fav-item">🍕 <strong>الطعام:</strong>&nbsp;<span style="color:var(--muted)">بيتزا</span></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2024 Yassin Amr. All Rights Reserved.</footer>
+
+  <!-- language toggle (saves choice to localStorage and persists across pages) -->
+  <button class="lang-btn" id="langToggle">🌐 عربي</button>
+
+<script>
+  const enBlock = document.getElementById('en');
+  const arBlock = document.getElementById('ar');
+  const btn = document.getElementById('langToggle');
+
+  function setLang(lang){
+    if(lang==='ar'){
+      enBlock.style.display='none';
+      arBlock.style.display='block';
+      btn.textContent='🌐 English';
+      localStorage.setItem('siteLang','ar');
+    } else {
+      enBlock.style.display='block';
+      arBlock.style.display='none';
+      btn.textContent='🌐 عربي';
+      localStorage.setItem('siteLang','en');
+    }
+  }
+
+  btn.addEventListener('click', ()=>{
+    const current = localStorage.getItem('siteLang') || 'en';
+    setLang(current==='en' ? 'ar' : 'en');
+  });
+
+  // init from storage
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const saved = localStorage.getItem('siteLang') || 'en';
+    setLang(saved);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Favorites — Yassin Amr</title>
+<style>
+  :root{--bg:#faf7f5;--card:#fff;--muted:#666;--text:#222;--shadow:0 6px 18px rgba(20,20,20,0.06)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family: 'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--text)}
+  header{background:#fff;padding:16px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+  nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+  main{max-width:980px;margin:36px auto;padding:0 18px;text-align:center}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);margin:14px auto;max-width:740px;text-align:left}
+  h1{margin:6px 0 18px}
+  .back{display:inline-block;margin-top:18px;padding:8px 14px;background:#f1f1f1;border-radius:8px;text-decoration:none;color:#111}
+  .lang-btn{position:fixed;bottom:20px;right:20px;background:#333;color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer}
+  footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div style="font-weight:700">Yassin Amr</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div id="en">
+    <h1>My Favorites</h1>
+    <div class="card"><h3>Favorite Color</h3><p>Electric Blue</p></div>
+    <div class="card"><h3>Favorite Band</h3><p>The Indie Rockers</p></div>
+    <div class="card"><h3>Favorite Game</h3><p>Galaxy Explorers</p></div>
+    <div class="card"><h3>Favorite Food</h3><p>Pizza</p></div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ Back</a>
+  </div>
+
+  <div id="ar" style="display:none;direction:rtl;">
+    <h1>تفضيلاتي</h1>
+    <div class="card"><h3>اللون المفضل</h3><p>الأزرق الكهربائي</p></div>
+    <div class="card"><h3>الفرقة المفضلة</h3><p>The Indie Rockers</p></div>
+    <div class="card"><h3>اللعبة المفضلة</h3><p>Galaxy Explorers</p></div>
+    <div class="card"><h3>الطعام المفضل</h3><p>بيتزا</p></div>
+
+    <a class="back" href="#" onclick="goBack(event)">⬅ الرجوع</a>
+  </div>
+</main>
+
+<footer>© 2024 Yassin Amr. All Rights Reserved.</footer>
+
+<button class="lang-btn" id="langToggle">🌐 عربي</button>
+
+<script>
+  const en = document.getElementById('en'), ar = document.getElementById('ar'), btn = document.getElementById('langToggle');
+  function setLang(l){ if(l==='ar'){ en.style.display='none'; ar.style.display='block'; btn.textContent='🌐 English'; localStorage.setItem('siteLang','ar'); } else { en.style.display='block'; ar.style.display='none'; btn.textContent='🌐 عربي'; localStorage.setItem('siteLang','en'); } }
+  btn.addEventListener('click', ()=> setLang(localStorage.getItem('siteLang')==='en' ? 'ar' : 'en'));
+  document.addEventListener('DOMContentLoaded', ()=> setLang(localStorage.getItem('siteLang') || 'en'));
+
+  function goBack(e){ e.preventDefault(); if(history.length>1) history.back(); else location.href='index.html'; }
+</script>
+</body>
+</html>
